@@ -8,7 +8,7 @@ package barberodormilon;
  *
  * @author Pablo García
  */
-public class BarberoDormilon {
+public class SimuladorProcesos {
 
     /**
      * @param args the command line arguments
