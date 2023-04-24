@@ -9,15 +9,15 @@ package barberodormilon;
  *
  * @author andre
  */
-public class Cliente {
+public class Proceso {
  
     private String name;
     private int time;
-    private Cliente sig_cliente;
+    private Proceso sig_cliente;
     
-    public Cliente(String nombre)
+    public Proceso(String id)
     {
-        this.name= nombre;
+        this.name= id;
         this.time= (int)((Math.random()* 10) + 5);
         this.sig_cliente = null;
     }
@@ -32,11 +32,11 @@ public class Cliente {
         return this.time ;
     }
       
-      public Cliente get_Next()
+      public Proceso get_Next()
       {
           return this.sig_cliente;
       }
-         public void set_Next(Cliente sig)
+         public void set_Next(Proceso sig)
       {
           this.sig_cliente = sig;
       }

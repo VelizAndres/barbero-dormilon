@@ -14,7 +14,7 @@ public class SimuladorProcesos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-            new barberia().setVisible(true);
+            new Procesador().setVisible(true);
     }
     
 }

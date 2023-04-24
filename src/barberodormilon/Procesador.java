@@ -14,16 +14,16 @@ import javax.swing.JLabel;
  *
  * @author axelg
  */
-public class barberia extends javax.swing.JFrame {
+public class Procesador extends javax.swing.JFrame {
 
     /**
      * Creates new form barberia
      */
     int espera = 0;
     int nextCliente = 0;
-    Cliente list_espera;
+    Proceso list_espera;
 
-    public barberia() {
+    public Procesador() {
         initComponents();
         persona1.setVisible(false);
         persona2.setVisible(false);
@@ -101,8 +101,6 @@ public class barberia extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Procesador.png"))); // NOI18N
-        jLabel6.setMaximumSize(new java.awt.Dimension(64, 64));
-        jLabel6.setMinimumSize(new java.awt.Dimension(64, 64));
         jLabel6.setRequestFocusEnabled(false);
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, -1, -1));
 
@@ -229,20 +227,21 @@ public class barberia extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(barberia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Procesador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(barberia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Procesador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(barberia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Procesador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(barberia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Procesador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new barberia().setVisible(true);
+                new Procesador().setVisible(true);
             }
         });
     }
@@ -253,7 +252,7 @@ public class barberia extends javax.swing.JFrame {
     Barbero b2 = new Barbero();
     Barbero b3 = new Barbero();
     Ingresar nuevos;
-    private static Cliente Sillas[] = new Cliente[3]; // Número de ranuras en el búfer
+    private static Proceso Sillas[] = new Proceso[3]; // Número de ranuras en el búfer
 
     public void quitar_elemento(int pos) {
 
@@ -275,18 +274,18 @@ public class barberia extends javax.swing.JFrame {
         @Override
         public void run() {
 
-            Cliente nuevo = new Cliente("C" + this.nextCliente);
+            Proceso nuevo = new Proceso("C" + this.nextCliente);
             if (Cliente_esperando < 3) {
                 try {
                     mutex.acquire(); // Entra a la región crítica
                 } catch (InterruptedException ex) {
-                    Logger.getLogger(barberia.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Procesador.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 this.insertar_elemento(nuevo); // Coloca el nuevo elemento en el búfer
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException ex) {
-                    Logger.getLogger(barberia.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Procesador.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 mutex.release(); // Sale de la región crítica
                 Cliente_esperando++;
@@ -309,12 +308,12 @@ public class barberia extends javax.swing.JFrame {
                 persona4.setVisible(true);
             }
             if (Cliente_esperando > 7) {
-                lbl_fila.setText("Personas en fila " + (Cliente_esperando - 7));
+                lbl_fila.setText("Procesos en fila " + (Cliente_esperando - 7));
             }
 
         }
 
-        public void insertar_elemento(Cliente elemento) {
+        public void insertar_elemento(Proceso elemento) {
             if (Sillas[0] == null) {
                 Sillas[0] = elemento;
             } else if (Sillas[1] == null) {
@@ -324,11 +323,11 @@ public class barberia extends javax.swing.JFrame {
             }
         }
 
-        public void espera(Cliente nuevo) {
+        public void espera(Proceso nuevo) {
             if (list_espera == null) {
                 list_espera = nuevo;
             } else {
-                Cliente aux = list_espera;
+                Proceso aux = list_espera;
                 while (aux.get_Next() != null) {
                     aux = aux.get_Next();
                 }
@@ -348,22 +347,22 @@ public class barberia extends javax.swing.JFrame {
 
             while (true) {
                 while (Cliente_esperando <= 0) {
-                    lbl_info.setText("Sin clientes");
+                    lbl_info.setText("Sin Procesos");
                 }
                 lbl_info.setText("Atendiendo");
                 if (Sillas[numbarb] != null) {
-                    this.info.setText("Despertando");
+                    this.info.setText("Activando");
                     this.despertar(numbarb);
-                    Cliente elemento = Sillas[numbarb];
+                    Proceso elemento = Sillas[numbarb];
                     try {
                         mutex.acquire(); // Entra a la región crítica
                     } catch (InterruptedException ex) {
-                        Logger.getLogger(barberia.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Procesador.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     try {
                         Thread.sleep(500);
                     } catch (InterruptedException ex) {
-                        Logger.getLogger(barberia.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Procesador.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     this.cortarCabello(elemento);
                     quitar_elemento(numbarb);
@@ -373,7 +372,7 @@ public class barberia extends javax.swing.JFrame {
                     this.info.setText("Esperando...");
                     esperando();
                     if (Cliente_esperando >= 7) {
-                        lbl_fila.setText("Personas en fila " + (Cliente_esperando - 7));
+                        lbl_fila.setText("Procesos en fila " + (Cliente_esperando - 7));
                     }
 
                 }
@@ -381,16 +380,16 @@ public class barberia extends javax.swing.JFrame {
             }
         }
 
-        private void cortarCabello(Cliente elemento) {
+        private void cortarCabello(Proceso elemento) {
             for (int timer = elemento.get_Tiempo(); timer > 0; timer--) {
-                this.info.setText("Cortando cabello a " + elemento.get_Nombre() + " " + timer + "s");
+                this.info.setText("Procesando  " + elemento.get_Nombre() + " " + timer + "s");
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException ex) {
-                    Logger.getLogger(barberia.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Procesador.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            this.info.setText("Termino corte a " + elemento.get_Nombre());
+            this.info.setText("Termino proceso " + elemento.get_Nombre());
         }
 
         public void despertar(int i) {
