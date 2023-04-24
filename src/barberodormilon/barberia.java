@@ -59,8 +59,6 @@ public class barberia extends javax.swing.JFrame {
         jList1 = new javax.swing.JList<>();
         jLabel18 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -96,91 +94,91 @@ public class barberia extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
-        jLabel1.setText("BARBEROS DORMILONES");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, -1, -1));
+        jLabel1.setText("SIMULACIÓN DE PROCESOS");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/poste-de-barbero (3).png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 60, 100));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/poste-de-barbero (3).png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 30, -1, -1));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/silla.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Procesador.png"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, -1, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/silla.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Procesador.png"))); // NOI18N
+        jLabel6.setMaximumSize(new java.awt.Dimension(64, 64));
+        jLabel6.setMinimumSize(new java.awt.Dimension(64, 64));
+        jLabel6.setRequestFocusEnabled(false);
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, -1, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/silla.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Procesador.png"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 360, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(255, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        barbero1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/barbero.png"))); // NOI18N
+        barbero1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ProcesoInctivo.png"))); // NOI18N
         jPanel1.add(barbero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        barbero2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/barbero.png"))); // NOI18N
+        barbero2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ProcesoInctivo.png"))); // NOI18N
         jPanel1.add(barbero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
-        barbero3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/barbero.png"))); // NOI18N
+        barbero3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ProcesoInctivo.png"))); // NOI18N
         jPanel1.add(barbero3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
         lbl_zz1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        lbl_zz1.setText("B1>ZZZZZ");
+        lbl_zz1.setText("Inactivo");
         jPanel1.add(lbl_zz1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
 
         lbl_zz2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        lbl_zz2.setText("B2>ZZZZZ");
+        lbl_zz2.setText("Inactivo");
         jPanel1.add(lbl_zz2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, -1));
 
         lbl_zz3.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        lbl_zz3.setText("B3>ZZZZZ");
+        lbl_zz3.setText("Inactivo");
         jPanel1.add(lbl_zz3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 180, -1));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel14.setText("Barberos Durmiendo");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, -1, -1));
+        jLabel14.setText("Nucleos Inactivos");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
+        jLabel14.getAccessibleContext().setAccessibleName("");
+        jLabel14.getAccessibleContext().setAccessibleDescription("");
 
         jLabel19.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jLabel19.setText("PERSONAS EN SOFA");
+        jLabel19.setText("Procesos en fila");
         getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        persona1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/avatar-de-hombre.png"))); // NOI18N
+        persona1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/proceso.png"))); // NOI18N
         jPanel2.add(persona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 23, -1, -1));
 
-        persona2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/avatar-de-hombre.png"))); // NOI18N
+        persona2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/proceso.png"))); // NOI18N
         jPanel2.add(persona2, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 23, -1, -1));
 
-        persona3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/avatar-de-hombre.png"))); // NOI18N
+        persona3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/proceso.png"))); // NOI18N
         jPanel2.add(persona3, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 23, -1, -1));
 
-        persona4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/avatar-de-hombre.png"))); // NOI18N
+        persona4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/proceso.png"))); // NOI18N
         jPanel2.add(persona4, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 23, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 460, 120));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 102));
-        jButton1.setText("Agregar persona");
+        jButton1.setActionCommand("Agregar proceso");
+        jButton1.setLabel("Agregar proceso");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 150, 126, 39));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 150, 150, 39));
 
-        cortando1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cortando.png"))); // NOI18N
+        cortando1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ProcesoActivo.png"))); // NOI18N
         getContentPane().add(cortando1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, -1, -1));
 
-        cortando2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cortando.png"))); // NOI18N
+        cortando2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ProcesoActivo.png"))); // NOI18N
         getContentPane().add(cortando2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 440, -1, -1));
 
-        cortando3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cortando.png"))); // NOI18N
+        cortando3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ProcesoActivo.png"))); // NOI18N
         getContentPane().add(cortando3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 440, -1, -1));
 
         lbl_info1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
@@ -468,8 +466,6 @@ public class barberia extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
